@@ -16,7 +16,12 @@ public class Grab : MonoBehaviour
     }
     public void OnTriggerExit(Collider other) 
     {
-        Debug.Log("I can not grab");
-        canGrab = false;
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            Debug.Log("I can not grab");
+            canGrab = false;
+        }
+
+        
     }
 }
